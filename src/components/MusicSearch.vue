@@ -1,0 +1,124 @@
+<template>
+      <section>
+        <div class="container">
+          <h1>Encontre a música que deseja cantar</h1>
+          <div class="container__input">
+            <input type="text" v-model="input" placeholder="Digite o nome da música" />
+            <button @click="recebeInput">Buscar</button>
+          </div>
+          <div class="container__result">
+            <div v-if="filteredMusic.length === 0">
+              <p>Nenhuma música encontrada!</p>
+            </div>
+            <div class="container__result__info" v-for="music in filteredMusic" :key="music.CODIGO">
+              <div class="container__result__info__codigo">
+                <p>Código da Música: {{ music.CODIGO }}</p>
+              </div>
+              <p>Nome da Música: {{ music.TITULO }} </p>
+              <p>Cantor: {{ music.CANTOR }}</p>              
+            </div>
+        </div>
+        </div>
+      </section>
+  </template>
+  
+  <script>
+  import { ref } from 'vue';
+  import { getMusicList } from '../http/request.js'; 
+  
+  export default {
+    name: 'MusicSearch',
+    setup() {
+      const input = ref('');
+      const filteredMusic = ref([]);
+  
+      async function recebeInput() {
+        const formattedInput = input.value.toUpperCase();
+        const musicList = await getMusicList();
+        filteredMusic.value = musicList.filter(music =>
+          typeof music.TITULO === 'string' && music.TITULO.includes(formattedInput)
+        );
+      }
+      console.log(input);
+      
+      return {
+        input,
+        recebeInput,
+        filteredMusic
+      };
+    }
+  };
+  </script>
+  
+  <style scoped>
+  .container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container h1{
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  .container__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+  .container__input input{
+    padding: 12px 5px 11px 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  .container__input button {
+    padding: 11px 1rem;
+    font-size: 16px;
+    background-color: orange;
+    border: none;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .container__result {
+    text-align: center;
+    margin-top: 10px;
+    color: aliceblue;  
+  }
+  .container__result__info {
+    background-color: aliceblue;
+    margin-bottom: 0.5rem;
+    border-radius: 0.4rem;
+    color: black;
+    padding: 0.5rem;
+  }
+  .container__result__info__codigo {
+    font-size: 20px;
+    font-weight: 700;    
+  }
+  textarea:focus, input:focus, button:focus, select:focus {
+    outline: 0;
+  } 
+
+  @media only screen and (max-width: 425px) {
+    .container h1{
+      font-size: 1.8rem;
+    }
+    .container__input {
+      flex-direction: column;
+    }
+    .container__input input{
+      margin-bottom: 10px;
+    }
+    .container__result {
+      margin-top: 10px;
+      color: aliceblue;
+    }
+  }
+
+  </style>
