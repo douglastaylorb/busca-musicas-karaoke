@@ -90,12 +90,19 @@
     background-color: orange;
     border: none;
     border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  .container__input button:hover {
+    background-color: #ff8c00;
+  }
+  .container__input button:active {
+    background-color: #fab662;
   }
 
   .container__result {
     text-align: center;
     margin-top: 10px;
-    color: aliceblue;  
+    color: aliceblue;
   }
   .container__result__info {
     background-color: aliceblue;
