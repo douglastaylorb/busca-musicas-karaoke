@@ -72,7 +72,7 @@
     margin-bottom: 1.2rem;
   }
   .container__input input{
-    padding: 12px 5px 11px 10px;
+    padding: 12px 20px 11px 13px;
     font-size: 15px;
     border: none;
     border-radius: 5px 0 0 5px;
@@ -80,6 +80,8 @@
   .container__input button {
     padding: 11px 1rem;
     font-size: 16px;
+    color: #2e2e2e;
+    font-weight: 700;
     background-color: orange;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -114,10 +116,17 @@
     }
     .container__input input{
       margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 12px 30px 11px 30px;
+    }
+    .container__input button {
+      border-radius: 5px;
+      padding: 9px 2rem;
+      font-size: 20px;
     }
     .container__result {
-      margin-top: 10px;
-      color: aliceblue;
+      min-width: 300px;
+      height: auto;
     }
   }
 
