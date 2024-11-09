@@ -12,7 +12,7 @@
             </div>
             <div class="container__result__info" v-for="music in filteredMusic" :key="music.CODIGO">
               <div class="container__result__info__codigo">
-                <p>Código da Música: {{ music.CODIGO }}</p>
+                <p>Código da Música: {{ formatCodigo(music.CODIGO) }}</p>
               </div>
               <p>Nome da Música: {{ music.TITULO }} </p>
               <p>Cantor: {{ music.CANTOR }}</p>              
@@ -39,12 +39,17 @@
           typeof music.TITULO === 'string' && music.TITULO.includes(formattedInput)
         );
       }
-      console.log(input);
+
+      function formatCodigo(codigo) {
+        const codigoStr = codigo.toString();
+        return codigoStr.length === 4 ? '0' + codigoStr : codigoStr;
+      }
       
       return {
         input,
         recebeInput,
-        filteredMusic
+        filteredMusic,
+        formatCodigo
       };
     }
   };
