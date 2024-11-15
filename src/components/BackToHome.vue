@@ -1,5 +1,5 @@
 <template>
-  <a href="/" class="return-home">Voltar</a>
+  <a href="/home" class="return-home">Voltar</a>
 </template>
 
 <script>

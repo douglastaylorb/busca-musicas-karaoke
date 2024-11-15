@@ -1,24 +1,26 @@
 <template>
+  <Header v-if="isLoggedIn" />
   <div class="app-container">
-    <div v-if="isHomePage">
-      <h1>Bem-vindo ao Cante Mais</h1>
-      <div class="button-group">
-        <button @click="goToKaraoke">Ir para Karaokê</button>
-        <button @click="goToMusicSearch">Encontre a música</button>
-      </div>
-    </div>
     <router-view></router-view>
-    <footer>Criado por Douglas Taylor.</footer>
+    <footer v-if="!isLoginPage">Criado por Douglas Taylor.</footer>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue';
+import { isLoggedIn } from './store/auth';
+
 export default {
   name: "App",
+  components: {
+    Header
+  },
   computed: {
-    isHomePage() {
-      return this.$route.name === 'home';
-    }
+    isLoginPage() {
+      return this.$route.name === 'login';
+    },
+    isLoggedIn() {
+      return isLoggedIn.value;    }
   },
   methods: {
     goToKaraoke() {
@@ -33,6 +35,8 @@ export default {
 
 <style scoped>
 .app-container {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,33 +44,10 @@ export default {
   color: #eeeeee;
   font-family: "Roboto", sans-serif;
   text-align: center;
+  min-height: 100vh;
 }
-.app-container h1 {
-  font-size: 2.5rem;
-}
-.button-group {
-  padding-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #151515;
-  background-color: #eeeeee;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  opacity: 0.8;
-}
-button:active {
-  opacity: 0.6;
-}
-footer {
-  margin-top: 2rem;
+.footer {
+  margin-top: auto;
   font-size: 18px;
 }
 </style>
