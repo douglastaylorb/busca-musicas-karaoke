@@ -2,6 +2,7 @@
 <template>
   <section class="login-container">
     <h1>Login</h1>
+    <p>Digite suas credenciais nos campos abaixo:</p>
     <form @submit.prevent="handleLogin">
       <div>
         <input type="text" v-model="username" placeholder="Usuário" required />
@@ -10,6 +11,7 @@
         <input type="password" v-model="password" placeholder="Senha" required />
       </div>
       <button type="submit">Entrar</button>
+      <a href="#">Esqueci minha senha</a>
     </form>
     <p v-if="error" class="error">{{ error }}</p>
   </section>
@@ -50,14 +52,19 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding: 3rem 4rem;
+  padding: 3rem 3rem;
   border-radius: 1rem;
+  box-shadow: 0 0 40px rgba(95, 95, 95, 0.6);
 }
 
 .login-container h1 {
   color: #181818;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+}
+
+.login-container p {
+  margin-bottom: 1rem;
 }
 
 form {
@@ -90,5 +97,11 @@ button:active {
 .error {
   color: rgb(250, 86, 86);
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-container {
+    padding: 2rem 2rem;
+  }
 }
 </style>

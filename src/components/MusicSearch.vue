@@ -145,19 +145,11 @@ select:focus {
   outline: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .container h1 {
-    font-size: 2.5rem;
-  }
 
-  .container__input input {
-    padding: 12px 30px 11px 30px;
+@media only screen and (max-width: 769px) {
+  .container {
+    padding: 3rem 1rem;
   }
-
-  .container__input button {
-    padding: 9px 2rem;
-  }
-  
 }
 
 @media only screen and (max-width: 425px) {

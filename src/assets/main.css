@@ -6,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-input {
+input, p, a {
   color: #2e2e2e;
 }
 h1 {
@@ -31,3 +31,9 @@ h1 {
     place-items: center;
   }
 } */
+
+@media only screen and (max-width: 435px) {
+  h1 {
+    font-size: 2rem;
+  }
+}

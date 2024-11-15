@@ -24,16 +24,16 @@ export default {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 10px 40px;
+  padding: 10px 20px;
   color: #fff;
   position: absolute;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 14px;
-  color: #151515;
-  background-color: #eeeeee;
+  color: white;
+  /* background-color: #eeeeee; */
   border: none;
   border-radius: 5px;
   cursor: pointer;

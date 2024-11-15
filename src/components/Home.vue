@@ -24,11 +24,6 @@ export default {
 </script>
 
 <style scoped>
-
-h1 {
-  font-size: 4rem;
-}
-
 .button-group {
   padding: 1rem 0 3rem 0;
   display: flex;
