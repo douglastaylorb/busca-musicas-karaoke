@@ -10,7 +10,7 @@
 
 <style scoped>
   .return-home {
-  padding: 11px 1rem;
+  padding: 14px 1rem;
   font-size: 16px;
   color: var(--font-color);
   font-weight: 700;

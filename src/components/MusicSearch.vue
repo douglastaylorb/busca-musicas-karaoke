@@ -9,7 +9,7 @@
           <BackToHome />
         </div>
       </div>
-      <div class="container__result">
+      <div class="container__result grid md:grid-cols-2 lg:grid-cols-3">
         <div v-if="searchActivated && filteredMusic.length === 0">
           <p>Nenhuma música encontrada!</p>
         </div>
@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 .container {
-  margin: 0 auto;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,6 +94,7 @@ export default {
   font-size: 15px;
   border: none;
   border-radius: 5px 0 0 5px;
+  color: #2e2e2e;
 }
 
 .container__input button {
@@ -118,9 +119,13 @@ export default {
   text-align: center;
   margin-top: 10px;
   color: aliceblue;
+  gap: 10px;
 }
 
 .container__result__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: aliceblue;
   margin-bottom: 0.5rem;
   border-radius: 0.4rem;
@@ -138,6 +143,21 @@ input:focus,
 button:focus,
 select:focus {
   outline: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container h1 {
+    font-size: 2.5rem;
+  }
+
+  .container__input input {
+    padding: 12px 30px 11px 30px;
+  }
+
+  .container__input button {
+    padding: 9px 2rem;
+  }
+  
 }
 
 @media only screen and (max-width: 425px) {
