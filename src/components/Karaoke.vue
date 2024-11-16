@@ -15,8 +15,6 @@
     <div class="modal" v-show="modalVisible">
       <div class="modal-content">{{ modalContent }}</div>
     </div>
-    
-    <footer>Criado por Douglas Taylor.</footer>
   </div>
 </template>
 
@@ -94,7 +92,6 @@ export default {
 
 <style scoped>
 .karaoke-container {
-  min-height: 100vh;
   margin: 0;
   background-color: var(--background-color);
   display: flex;
