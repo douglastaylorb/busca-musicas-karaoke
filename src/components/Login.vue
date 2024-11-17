@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     handleLogin() {
-      if (this.username === 'admin' && this.password === '123456') { // Exemplo de credenciais
+      if (this.username === 'admin' && this.password === '!@#123456') { // Exemplo de credenciais
         localStorage.setItem('loggedIn', 'true'); // Persistência simples
         this.$router.push('/home'); // Redireciona para a home após login
       } else {
