@@ -44,7 +44,8 @@ export default {
       const formattedInput = input.value.toUpperCase();
       const musicList = await getMusicList();
       filteredMusic.value = musicList.filter(music =>
-        typeof music.TITULO === 'string' && music.TITULO.includes(formattedInput)
+        (typeof music.TITULO === 'string' && music.TITULO.includes(formattedInput)) ||
+        (typeof music.CANTOR === 'string' && music.CANTOR.toUpperCase().includes(formattedInput))
       );
       searchActivated.value = true;
     }
