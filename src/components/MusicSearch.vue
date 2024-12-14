@@ -11,7 +11,9 @@
       </div>
       <div class="container__result grid md:grid-cols-2 lg:grid-cols-3">
         <div v-if="searchActivated && filteredMusic.length === 0">
-          <p>Nenhuma música encontrada!</p>
+          <div class="container__result__not-music">
+            <span>Nenhuma música encontrada!</span>
+          </div>
         </div>
         <div class="container__result__info" v-for="music in filteredMusic" :key="music.CODIGO">
           <div class="container__result__info__codigo">
@@ -180,6 +182,9 @@ select:focus {
   .container__result {
     min-width: 300px;
     height: auto;
+  }
+  .container__result__not-music {
+    color: aliceblue;
   }
 }
 </style>
