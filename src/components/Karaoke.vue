@@ -12,9 +12,11 @@
       <video id="meuVideo" controls ref="videoElem"></video>
     </div>
     <div class="error">{{ error }}</div>
-    <div class="modal" v-show="modalVisible">
-      <div class="modal-content">{{ modalContent }}</div>
-    </div>
+    <transition name="fade">
+      <div class="modal" v-show="modalVisible">
+        <div class="modal-content" v-html="modalContent"></div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -60,8 +62,8 @@ export default {
       this.modalContent = this.getModalContent(nota);
       setTimeout(() => {
         this.modalVisible = false;
-        this.$router.push('/');
-      }, 6000);
+        this.$router.push('/karaoke');
+      }, 5000);
     },
     gerarNota() {
       const min = 85;
@@ -70,20 +72,20 @@ export default {
     },
     getModalContent(nota) {
       if (nota >= 85 && nota <= 90) {
-        return `<div class="modal-content--titulo"><h2>Muito Bem! 😊</h2></div>
-                  <div class="modal-content--texto">Você tirou</div>
-                  <div class="modal-content--pontos">${nota}</div>
-                  <div class="modal-content--texto"><p>pontos!</p></div>`;
+        return `<div class="text-7xl text-white leading-loose">Muito Bem! 😊</div>
+                <div class="text-4xl text-white leading-relaxed">Você tirou</div>
+                <div class="text-8xl text-white leading-relaxed">${nota}</div>
+                <div class="text-4xl text-white">pontos!</div>`;
       } else if (nota >= 91 && nota <= 95) {
-        return `<div class="modal-content--titulo"><h2>Arrasou! 😁</h2></div>
-                  <div class="modal-content--texto">Você tirou</div>
-                  <div class="modal-content--pontos">${nota}</div>
-                  <div class="modal-content--texto"><p>pontos!</p></div>`;
+        return `<div class="text-7xl text-white leading-loose">Arrasou! 😁</div>
+                <div class="text-4xl text-white leading-relaxed">Você tirou</div>
+                <div class="text-8xl text-white leading-relaxed">${nota}</div>
+                <div class="text-4xl text-white">pontos!</div>`;
       } else {
-        return `<div class="modal-content--titulo"><h2>Você é Profissional? 🤩</h2></div>
-                  <div class="modal-content--texto">Você tirou</div>
-                  <div class="modal-content--pontos">${nota}</div>
-                  <div class="modal-content--texto"><p>pontos!</p></div>`;
+        return `<div class="text-7xl text-white leading-loose">Você é Profissional? 🤩</div>
+                <div class="text-4xl text-white leading-relaxed">Você tirou</div>
+                <div class="text-8xl text-white leading-relaxed">${nota}</div>
+                <div class="text-4xl text-white">pontos!</div>`;
       }
     }
   }
@@ -180,34 +182,31 @@ export default {
 .modal {
   display: flex;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 }
 
 .modal-content {
-  justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  width: 80%;
-  height: 90%;
-  margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.95);
+  padding: 5rem;
+  border-radius: 10px;
   text-align: center;
+  max-width: 80%;
+  max-height: 90%;
+  overflow-y: auto;
 }
 
-.modal-content--titulo {
-  font-size: 65px;
-  margin-bottom: 20px;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-.modal-content--pontos {
-  font-size: 92px;
-  font-weight: bold;
-}
-
-.modal-content--texto {
-  font-size: 40px;
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 425px) {
