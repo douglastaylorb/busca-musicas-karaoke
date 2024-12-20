@@ -9,7 +9,7 @@ const routes = [
   { path: '/', name: 'music-search', component: MusicSearch },
   { path: '/home', name: 'home', component: Home, meta: { requiresAuth: true } },
   { path: '/karaoke', name: 'karaoke', component: Karaoke, meta: { requiresAuth: true } },
-  { path: '/music-search', name: 'music-search', component: MusicSearch, meta: { requiresAuth: false } }
+  { path: '/music-search', name: 'music-search', component: MusicSearch },
 ];
 
 const router = createRouter({
