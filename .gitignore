@@ -14,8 +14,8 @@ dist-ssr
 coverage
 *.local
 
-/musicas
-/musicas-link
+/musicas/
+/musicas-link/
 /cypress/videos/
 /cypress/screenshots/
 
