@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.teste
 
 node_modules
 .DS_Store
@@ -14,8 +15,8 @@ dist-ssr
 coverage
 *.local
 
-/public/musicas/
-/public/musicas-link/
+/public/musicas
+/public/musicas-link
 /cypress/videos/
 /cypress/screenshots/
 
