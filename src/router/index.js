@@ -6,7 +6,7 @@ import Login from '../components/Login.vue';
 import Home from '../components/Home.vue';
 
 const routes = [
-  { path: '/', name: 'login', component: Login },
+  { path: '/', name: 'music-search', component: MusicSearch },
   { path: '/home', name: 'home', component: Home, meta: { requiresAuth: true } },
   { path: '/karaoke', name: 'karaoke', component: Karaoke, meta: { requiresAuth: true } },
   { path: '/music-search', name: 'music-search', component: MusicSearch, meta: { requiresAuth: false } }
