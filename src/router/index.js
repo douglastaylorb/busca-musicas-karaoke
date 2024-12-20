@@ -18,14 +18,14 @@ const router = createRouter({
 });
 
 // Middleware para proteger rotas que exigem autenticação
-router.beforeEach((to, from, next) => {
-  const loggedIn = localStorage.getItem('loggedIn');
+// router.beforeEach((to, from, next) => {
+//   const loggedIn = localStorage.getItem('loggedIn');
 
-  if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
-    next('/');
-  } else {
-    next();
-  }
-});
+//   if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
+//     next('/');
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
