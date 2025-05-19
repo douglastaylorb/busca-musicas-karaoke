@@ -13,24 +13,6 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
 }
-/* body {
-  display: flex;
-  place-items: center;
-} */
-
- /* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-} */
-
-
-/* @media (max-width: 425px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-} */
 
 @media only screen and (max-width: 435px) {
   h1 {

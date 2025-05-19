@@ -1,4 +1,3 @@
-<!-- src/components/Home.vue -->
 <template>
   <div>
     <h1>Bem-vindo ao Cante Mais</h1>
@@ -54,5 +53,16 @@ button:hover {
 }
 button:active {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 425px) {
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-group__buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>
