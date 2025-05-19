@@ -108,7 +108,6 @@ export default {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(/src/assets/images/background.jpg);
   background-size: cover;
   background-position: bottom;
   z-index: -1;
