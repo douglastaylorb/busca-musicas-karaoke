@@ -3,8 +3,10 @@
   <div>
     <h1>Bem-vindo ao Cante Mais</h1>
     <div class="button-group">
+      <div class="button-group__buttons">
       <button @click="goToKaraoke">Ir para Karaokê</button>
       <button @click="goToMusicSearch">Encontre a música</button>
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +32,13 @@ export default {
   justify-content: center;
   gap: 20px;
 }
+.button-group__buttons {
+  display: flex;
+  gap: 20px;
+}
+
 button {
+  flex: 1;
   padding: 10px 20px;
   font-size: 16px;
   color: #151515;
@@ -38,6 +46,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  min-width: 200px; 
+  text-align: center;
 }
 button:hover {
   opacity: 0.8;
