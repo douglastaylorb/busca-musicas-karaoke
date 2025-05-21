@@ -2,7 +2,7 @@
   <Header v-if="isLoggedIn" />
   <div class="app-container">
     <router-view></router-view>
-    <footer v-if="!isLoginPage">Criado por Douglas Taylor.</footer>
+    <footer v-if="!isLoginPage" class="text-neutral-400 text-lg">Criado por <a href="https://douglastaylor.com.br" target="_blank" class="font-bold text-white">Douglas Taylor.</a></footer>
   </div>
 </template>
 

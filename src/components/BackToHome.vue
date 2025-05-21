@@ -1,32 +1,15 @@
 <template>
-  <a href="/" class="return-home">Voltar</a>
+  <button
+    type="button"
+    @click="$router ? $router.push('/') : window.location.href = '/'"
+    class="px-4 py-3 text-2xl font-bold text-[var(--font-color)] bg-[#2e2e2e] rounded hover:bg-[#464545] active:bg-[#161616] no-underline border-none cursor-pointer focus:outline-0"
+  >
+    Voltar
+  </button>
 </template>
 
 <script>
-  export default {
-    name: 'BackToHome',
-  };
+export default {
+  name: 'BackToHome',
+};
 </script>
-
-<style scoped>
-  .return-home {
-  padding: 14px 1rem;
-  font-size: 16px;
-  color: var(--font-color);
-  font-weight: 700;
-  background-color: #2e2e2e;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  text-decoration: none;
-}
-.return-home:hover {
-  background-color: #464545;
-}
-.return-home:active {
-  background-color: #161616;
-}
-button:focus{
-  outline: 0;
-}
-</style>
