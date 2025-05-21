@@ -1,15 +1,15 @@
 <template>
   <div class="karaoke-container flex flex-col items-center justify-center text-center text-white">
-    <h1 class="mb-5 lg:text-8xl md:text-6xl">Karaokê Web</h1>
-    <div class="flex flex-col items-center justify-center">
+    <h1 class="mb-5 text-8xl max-md:text-6xl max-sm:text-5xl">Karaokê Web</h1>
+    <div class="px-4 flex flex-col items-center justify-center w-full">
       <input
         type="text"
         v-model="nomeVideo"
         placeholder="Número da canção..."
         @keypress.enter="buscarVideo"
-        class="p-4 mb-4 text-lg border-none rounded-md outline-none w-96 max-w-full"
+        class="p-4 mb-4 text-lg border-none rounded-md outline-none w-full max-w-md"
       />
-      <div class="flex justify-around w-full max-w-md gap-4">
+      <div class="flex justify-around max-sm:flex-col w-full max-w-md gap-4 max-sm:gap-2">
         <button
           @click="buscarVideo"
           class="flex-1 px-8 py-4 text-2xl font-bold text-black bg-orange-500 rounded-md hover:opacity-80 active:opacity-60"
