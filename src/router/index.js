@@ -1,6 +1,7 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 import Karaoke from '../components/Karaoke.vue';
+import KaraokeQueue from '../components/KaraokeQueue.vue';
 import MusicSearch from '../components/MusicSearch.vue';
 import Login from '../components/Login.vue';
 import Home from '../components/Home.vue';
@@ -9,6 +10,7 @@ const routes = [
   // { path: '/', name: 'music-search', component: MusicSearch },
   { path: '/', name: 'home', component: Home},
   { path: '/karaoke', name: 'karaoke', component: Karaoke},
+  { path: '/karaoke-queue', name: 'karaoke-queue', component: KaraokeQueue},
   { path: '/music-search', name: 'music-search', component: MusicSearch },
 ];
 

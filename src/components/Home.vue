@@ -3,8 +3,9 @@
     <h1>Bem-vindo ao Cante Mais</h1>
     <div class="button-group">
       <div class="button-group__buttons">
-      <button @click="goToKaraoke">Ir para Karaokê</button>
-      <button @click="goToMusicSearch">Encontre a música</button>
+        <button @click="goToKaraoke">Karaokê</button>
+        <button @click="goToKaraokeQueue">Gerenciar Fila</button>
+        <button @click="goToMusicSearch">Encontre a música</button>
       </div>
     </div>
   </div>
@@ -16,6 +17,9 @@ export default {
   methods: {
     goToKaraoke() {
       this.$router.push({ name: 'karaoke' });
+    },
+    goToKaraokeQueue() {
+      this.$router.push({ name: 'karaoke-queue' });
     },
     goToMusicSearch() {
       this.$router.push({ name: 'music-search' });
