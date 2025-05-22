@@ -1,10 +1,9 @@
 <template>
   <div class="karaoke-container flex flex-col items-center justify-center text-center text-white">
-    <h1 class="mb-5 text-8xl max-md:text-6xl max-sm:text-5xl">Karaokê Web</h1>
+    <h1 class="mb-4 text-8xl max-md:text-6xl max-sm:text-5xl">Karaokê Web</h1>
     
     <!-- Lista de músicas na fila -->
-    <div class="mt-8 w-4/5 max-w-lg">
-      <h2 class="text-3xl mb-4">Músicas na Fila</h2>
+    <div class="w-4/5 max-w-lg">
       <div class="bg-black bg-opacity-50 rounded-lg p-4">
         <div v-if="filaMusicas.length === 0" class="text-xl text-gray-400">
           Nenhuma música na fila
@@ -74,7 +73,12 @@ export default {
       const response = await fetch('/musicas.json');
       const musicas = await response.json();
       this.musicasInfo = musicas.reduce((acc, musica) => {
-        acc[musica.CODIGO] = {
+        // Converte o código para string e adiciona zero no início se tiver 4 dígitos
+        let codigo = String(musica.CODIGO);
+        if (codigo.length === 4) {
+          codigo = '0' + codigo;
+        }
+        acc[codigo] = {
           titulo: musica.TITULO,
           cantor: musica.CANTOR
         };

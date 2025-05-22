@@ -9,6 +9,7 @@
         @keypress.enter="adicionarNaFila"
         class="p-4 mb-4 text-lg border-none rounded-md outline-none w-full max-w-md"
       />
+      <div v-if="erro" class="text-red-500 mb-4">{{ erro }}</div>
       <div class="flex justify-around max-sm:flex-col w-full max-w-md gap-4 max-sm:gap-2">
         <button
           @click="adicionarNaFila"
@@ -57,7 +58,8 @@ export default {
     return {
       nomeVideo: '',
       filaMusicas: [],
-      musicasInfo: {}
+      musicasInfo: {},
+      erro: ''
     };
   },
   components: {
@@ -75,7 +77,12 @@ export default {
       const response = await fetch('/musicas.json');
       const musicas = await response.json();
       this.musicasInfo = musicas.reduce((acc, musica) => {
-        acc[musica.CODIGO] = {
+        // Converte o código para string e adiciona zero no início se tiver 4 dígitos
+        let codigo = String(musica.CODIGO);
+        if (codigo.length === 4) {
+          codigo = '0' + codigo;
+        }
+        acc[codigo] = {
           titulo: musica.TITULO,
           cantor: musica.CANTOR
         };
@@ -98,11 +105,23 @@ export default {
         this.filaMusicas = JSON.parse(event.newValue || '[]');
       }
     },
+    verificarMusicaExiste(codigo) {
+      if (this.musicasInfo[codigo]) {
+        return codigo;
+      }
+      return null;
+    },
     adicionarNaFila() {
       if (this.nomeVideo.trim()) {
-        this.filaMusicas.push(this.nomeVideo);
-        this.nomeVideo = '';
-        this.atualizarFilaLocalStorage();
+        const codigoValido = this.verificarMusicaExiste(this.nomeVideo.trim());
+        if (codigoValido) {
+          this.filaMusicas.push(codigoValido);
+          this.nomeVideo = '';
+          this.erro = '';
+          this.atualizarFilaLocalStorage();
+        } else {
+          this.erro = 'Música não encontrada!';
+        }
       }
     },
     removerDaFila(index) {
