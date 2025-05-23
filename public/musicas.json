@@ -1,9 +1,75 @@
 [
   {
-    "CANTOR": "Fagner",
+    "CANTOR": "Zé Geraldo",
+    "CODIGO": "05151",
+    "TITULO": "MEIGA SENHORITA - ATUALIZADA",
+    "INICIO DA LETRA": "Minha meiga senhorita eu nunca pude"
+  },
+  {
+    "CANTOR": "Raça Negra",
+    "CODIGO": "05150",
+    "TITULO": "VIDA CIGANA - ATUALIZADA",
+    "INICIO DA LETRA": "Oh meu amor, não fique triste"
+  },
+  {
+    "CANTOR": "Raimundos",
+    "CODIGO": "05149",
+    "TITULO": "MULHER DE FASES - ATUALIZADA",
+    "INICIO DA LETRA": "Que mulher ruim jogou minhas coisas..."
+  },
+  {
+    "CANTOR": "Jorge e Mateus",
+    "CODIGO": "05148",
+    "TITULO": "Flor - ATUALIZADA",
+    "INICIO DA LETRA": "Flor ô u ô ô... Flor pra onde for você for"
+  },
+  {
+    "CANTOR": "Só Pra Contrariar",
+    "CODIGO": "05147",
+    "TITULO": "ESSA TAL LIBERDADE - ATUALIZADA",
+    "INICIO DA LETRA": "O que é que eu vou fazer com essa tal"
+  },
+  {
+    "CANTOR": "Pixote",
+    "CODIGO": "05146",
+    "TITULO": "INSEGURANÇA - ATUALIZADA",
+    "INICIO DA LETRA": "Essa noite eu notei que você demorou"
+  },
+  {
+    "CANTOR": "Gian e Giovani",
+    "CODIGO": "05145",
+    "TITULO": "CONVITE DE CASAMENTO - ATUALIZADA",
+    "INICIO DA LETRA": "A gente morou e cresceu na mesma rua…"
+  },
+  {
+    "CANTOR": "Claudinho e Buchecha",
+    "CODIGO": "05144",
+    "TITULO": "CONQUISTA - ATUALIZADA",
+    "INICIO DA LETRA": "Sabe tchu ru ru"
+  },
+  {
+    "CANTOR": "Paulo Ricardo",
+    "CODIGO": "05143",
+    "TITULO": "A CRUZ E A ESPADA - ATUALIZADA",
+    "INICIO DA LETRA": "Havia um tempo em que eu vivia"
+  },
+  {
+    "CANTOR": "Sum 41",
+    "CODIGO": "05142",
+    "TITULO": "Pieces",
+    "INICIO DA LETRA": "I tried be perfect"
+  },
+  {
+    "CANTOR": "Shania Twain",
+    "CODIGO": "05141",
+    "TITULO": "YOU'RE STILL THE ONE",
+    "INICIO DA LETRA": "I'm still the one"
+  },
+  {
+    "CANTOR": "Humberto e Ronaldo",
     "CODIGO": "05140",
-    "TITULO": "DESLIZES - ATUALIZADA",
-    "INICIO DA LETRA": "Não sei porque insisto tanto em te querer"
+    "TITULO": "DEIXA O TEMPO VER",
+    "INICIO DA LETRA": "Foi tudo como eu sonhei"
   },
   {
     "CANTOR": "Engenheiros do Hawai",
@@ -175,7 +241,7 @@
   },
   {
     "CANTOR": "Leandro e Leonardo",
-    "CODIGO": 5134,
+    "CODIGO": "05134",
     "TITULO": "TEMPORAL DE AMOR - ATUALIZADA",
     "INICIO DA LETRA": "Chuva no telhado, vento no portão"
   },
