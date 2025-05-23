@@ -8,7 +8,7 @@
         <div v-if="filaMusicas.length === 0" class="text-xl text-gray-400">
           Nenhuma música na fila
         </div>
-        <div v-else class="space-y-2">
+        <div v-else class="space-y-2 max-h-[325px] overflow-y-auto custom-scrollbar">
           <div v-for="(codigo, index) in filaMusicas" :key="index" 
                class="flex flex-col p-2 bg-neutral-100 rounded">
             <span class="text-xl font-bold text-neutral-800">{{ musicasInfo[codigo]?.titulo || codigo }}</span>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import BackToHome from './BackToHome.vue';
+import BackToHome from '../common/BackToHome.vue';
 
 export default {
   name: 'Karaoke',
@@ -246,5 +246,27 @@ export default {
   max-width: 80% !important;
   max-height: 90% !important;
   overflow-y: auto !important;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 </style>

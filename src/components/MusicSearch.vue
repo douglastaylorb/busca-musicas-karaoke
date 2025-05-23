@@ -44,7 +44,7 @@
 <script>
 import { ref } from 'vue';
 import { getMusicList } from '../http/request.js';
-import BackToHome from './BackToHome.vue';
+import BackToHome from '../common/BackToHome.vue';
 
 export default {
   components: {
