@@ -150,7 +150,7 @@ export default {
           this.filaMusicas.shift();
           this.atualizarFilaLocalStorage();
           this.tocarProximaMusica();
-        }, 5000);
+        }, 10000);
 
     },
     gerarNota() {
