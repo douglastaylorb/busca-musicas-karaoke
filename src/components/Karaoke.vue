@@ -1,6 +1,6 @@
 <template>
   <!-- adicionar as próximas musicas e o texto deve ter uma sombra -->
-  <div class="text-4xl text-gray-200 absolute top-2 left-50 flex flex-col gap-2 z-50 items-center text-shadow-lg bg-black bg-opacity-50 p-2 rounded-lg">
+  <div class="text-5xl text-gray-200 absolute top-2 left-50 flex flex-col gap-2 z-50 items-center text-shadow-lg bg-black bg-opacity-50 p-2 rounded-lg">
     <div class="flex flex-row gap-2">
       <span>Próxima música: {{ musicasInfo[filaMusicas[0]]?.titulo || '' }}</span>
     </div>
