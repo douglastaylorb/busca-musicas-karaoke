@@ -6,6 +6,7 @@
         <input
           type="text"
           v-model="input"
+          @keydown.enter="recebeInput"
           placeholder="Digite o nome da música..."
           class="p-4 mb-4 text-lg border-none rounded-md outline-none w-full max-w-md"
         />
@@ -16,7 +17,12 @@
           >
             Buscar
           </button>
-          <BackToHome class="flex-1 mt-2 sm:mt-0" />
+          <button
+            @click="clearInput"
+            class="flex-1 px-6 py-3 text-xl font-bold text-gray-100 bg-neutral-600 rounded-md hover:opacity-80 active:opacity-60 mt-2 sm:mt-0"
+          >
+            Limpar
+          </button>
         </div>
       </div>
       <div class="px-4 text-center mt-6 text-slate-100 grid gap-4 w-full max-w-5xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -33,8 +39,9 @@
           <div class="text-lg font-bold">
             <p>Código da Música: {{ formatCodigo(music.CODIGO) }}</p>
           </div>
-          <p>Nome da Música: {{ music.TITULO }} </p>
-          <p>Cantor: {{ music.CANTOR }}</p>
+          <span><strong>Nome da Música:</strong> {{ music.TITULO }} </span>
+          <span class="line-clamp-1"><strong>Cantor:</strong> {{ music.CANTOR }}</span>
+          <span class="line-clamp-1"><strong>Início:</strong> {{ music.INICIO }}</span>
         </div>
       </div>
     </div>
@@ -56,12 +63,17 @@ export default {
     const filteredMusic = ref([]);
     const searchActivated = ref(false);
 
+    function removeAccents(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
     async function recebeInput() {
-      const formattedInput = input.value.toUpperCase();
+      const formattedInput = removeAccents(input.value.toUpperCase());
       const musicList = await getMusicList();
       filteredMusic.value = musicList.filter(music =>
-        (typeof music.TITULO === 'string' && music.TITULO.includes(formattedInput)) ||
-        (typeof music.CANTOR === 'string' && music.CANTOR.toUpperCase().includes(formattedInput))
+        (typeof music.TITULO === 'string' && removeAccents(music.TITULO.toUpperCase()).includes(formattedInput)) ||
+        (typeof music.CANTOR === 'string' && removeAccents(music.CANTOR.toUpperCase()).includes(formattedInput)) ||
+        (typeof music.INICIO === 'string' && removeAccents(music.INICIO.toUpperCase()).includes(formattedInput))
       );
       searchActivated.value = true;
     }
@@ -71,12 +83,19 @@ export default {
       return codigoStr.length === 4 ? '0' + codigoStr : codigoStr;
     }
 
+    function clearInput() {
+      input.value = '';
+      filteredMusic.value = [];
+      searchActivated.value = false;
+    }
+
     return {
       input,
       recebeInput,
       filteredMusic,
       formatCodigo,
-      searchActivated
+      searchActivated,
+      clearInput
     };
   }
 };
