@@ -64,7 +64,7 @@ export default {
     const searchActivated = ref(false);
 
     function removeAccents(str) {
-      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s/g, '');
     }
 
     async function recebeInput() {
