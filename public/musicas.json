@@ -1,5 +1,59 @@
 [
   {
+    "CANTOR": "Avenged Sevenfold",
+    "CODIGO": "05184",
+    "TITULO": "WISH YOU WERE HERE",
+    "INICIO": "So, so you think"
+  },
+  {
+    "CANTOR": "Toto",
+    "CODIGO": "05183",
+    "TITULO": "HOLD THE LINE",
+    "INICIO": "It's not ine the way"
+  },
+  {
+    "CANTOR": "The cranberries",
+    "CODIGO": "05182",
+    "TITULO": "ZOMBIE",
+    "INICIO": "Another head hangs lowly"
+  },
+  {
+    "CANTOR": "Nicholas Shaw",
+    "CODIGO": "05181",
+    "TITULO": "CASTAWAY",
+    "INICIO": "I am fire down below"
+  },
+  {
+    "CANTOR": "Zé Felipe",
+    "CODIGO": "05180",
+    "TITULO": "MEU GRITO DE AMOR",
+    "INICIO": "Me dei demais"
+  },
+  {
+    "CANTOR": "Marisa Monte",
+    "CODIGO": "05179",
+    "TITULO": "DEPOIS",
+    "INICIO": "Depois de sonhar tantos anos"
+  },
+  {
+    "CANTOR": "Linkind Park",
+    "CODIGO": "05178",
+    "TITULO": "THE EMPTINESS MACHINE",
+    "INICIO": "Your blades are sharpened"
+  },
+  {
+    "CANTOR": "Avenge Sevenfold",
+    "CODIGO": "05177",
+    "TITULO": "SO FAR AWAY",
+    "INICIO": "NEVER FEARED FOR ANYTHING"
+  },
+  {
+    "CANTOR": "3 Doors Down",
+    "CODIGO": "05176",
+    "TITULO": "AWAY FROM THE SUN",
+    "INICIO": "It's down to this"
+  },
+  {
     "CANTOR": "Tayrone - Marília Mendonça",
     "CODIGO": "05175",
     "TITULO": "CÊ TA PREPARADA",
