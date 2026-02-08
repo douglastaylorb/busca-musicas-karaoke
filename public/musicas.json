@@ -1,5 +1,47 @@
 [
   {
+    "CANTOR": "Natasha Bedingfield",
+    "CODIGO": "05192",
+    "TITULO": "UNWRITTEN",
+    "INICIO": "I am unwritten…"
+  },
+  {
+    "CANTOR": "Araketu",
+    "CODIGO": "05191",
+    "TITULO": "COBERTOR - ATUALIZADA",
+    "INICIO": "Como é que você foi embora…"
+  },
+  {
+    "CANTOR": "Capital Inicial",
+    "CODIGO": "05190",
+    "TITULO": "NATASHA - ATUALIZADA",
+    "INICIO": "Tem dezessete anos e fugiu de casa…"
+  },
+  {
+    "CANTOR": "Capital Inicial",
+    "CODIGO": "05189",
+    "TITULO": "FÁTIMA - ATUALIZADA",
+    "INICIO": "Vocês esperam uma intervenção divina…"
+  },
+  {
+    "CANTOR": "A day to remember",
+    "CODIGO": "05188",
+    "TITULO": "THIS DOWNFALL OF US ALL",
+    "INICIO": "LET'S GO"
+  },
+  {
+    "CANTOR": "Elton John",
+    "CODIGO": "05187",
+    "TITULO": "BLESSED",
+    "INICIO": "HEY YOU"
+  },
+  {
+    "CANTOR": "Menos é mais",
+    "CODIGO": "05186",
+    "TITULO": "P DO PECADO",
+    "INICIO": "Uma ligação fria"
+  },
+  {
     "CANTOR": "Dire Straits",
     "CODIGO": "05185",
     "TITULO": "SO FAR AWAY",
